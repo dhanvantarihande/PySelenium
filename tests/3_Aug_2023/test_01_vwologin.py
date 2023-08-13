@@ -64,3 +64,8 @@ def test_vwologin():
     LOGGER.info('title is' + driver.title)
     # Verify that the Dashboard is Loaded - Pytest will Do Verification
     assert "Dashboard" in driver.title
+
+    driver.refresh()
+    driver.get("https://sdet.live")
+    driver.back()
+    driver.forward()
