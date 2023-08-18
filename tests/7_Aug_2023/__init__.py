@@ -1,10 +1,10 @@
 # Selenium Provides --> How to Find the Elements
-# Find_elements by_id: Finds an element by its unique id attribute.
-# Find_elements by_name: Finds an element by its name attribute.
-# Find_elements by_link_text: Finds an anchor element (a) by its visible text.
-# Find_elements by_partial_link_text: Finds an anchor element (a) by a partial match of
-# Find_elements by_tag_name: Finds an element by its HTML tag name (e.g., "div", "input")
-# Find_elements by_class_name: Finds an element by its CSS class name.
+# Find_elements by_ID: Finds an element by its unique id attribute.
+# Find_elements by_NAME: Finds an element by its name attribute.
+# Find_elements by_LINK_TEXT: Finds an anchor element (a) by its visible text.
+# Find_elements by_PARTIAL_LINK_TEXT: Finds an anchor element (a) by a partial match of
+# Find_elements by_TAG_NAME: Finds an element by its HTML tag name (e.g., "div", "input")
+# Find_elements by_CLASS_NAME: Finds an element by its CSS class name.
 
 
 # import logging
@@ -116,8 +116,50 @@
 # value="Yes"> Apply for hospital readmission
 # </label>
 
+# SELECT RADIO BUTTON (2ND OPT)
+# <
+# input
+# type = "radio"
+# name = "programs"
+# id = "radio_program_medicaid"
+# value = "Medicaid" >
 
-#  2ND ATTEMPT SUCCESSFUL
+# ENTER TIME AND DATE
+# <
+# input
+# type = "text"
+# class ="form-control"
+# id="txt_visit_date"
+# name="visit_date"
+# placeholder="dd/mm/yyyy"
+# autocomplete="off"
+# required=""
+# >
+
+# COMMENT AREA (TEXT AREA)
+# <
+# textarea
+# class ="form-control"
+# id="txt_comment"
+# name="comment"
+# placeholder="Comment"
+# rows="10" >
+# < /textarea >
+
+# CLICK BOOK APPOINTMENT BUTTON
+# <
+# button
+# id = "btn-book-appointment"
+# type = "submit"
+# class ="btn btn-default" >
+# Book Appointment < /button >
+
+# VERIFY THE APPOINTMENT CONFIRMATION MESSAGE
+# < h2 >
+# Appointment Confirmation < / h2 >
+
+
+###  2ND ATTEMPT SUCCESSFUL ###
 
 # import logging
 
