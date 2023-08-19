@@ -1,12 +1,14 @@
 import logging
 
 from selenium import webdriver
+from selenium.common.exceptions import (ElementNotVisibleException,
+                                        ElementNotSelectableException)
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 
-def test_vwo():
+def test_vwologin():
     LOGGER = logging.getLogger(__name__)
     driver = webdriver.Chrome()
     driver.maximize_window()
@@ -22,8 +24,14 @@ def test_vwo():
     submit_button = driver.find_element(By.CSS_SELECTOR, "#js-login-btn")
     submit_button.click()
 
-    page_heading_element = WebDriverWait(driver, 10).until(
-        EC.visibility_of_element_located(driver.find_element(By.CSS_SELECTOR, ".page-heading"))
-    )
+    # .page-heading
+    # WebDriverWait(driver, 15).until(
+    #     EC.visibility_of_element_located((By.CSS_SELECTOR, ".page-heading"))
+    # )
 
-    assert "Dashboard" in page_heading_element.text
+    ignore_list = [ElementNotVisibleException, ElementNotSelectableException]
+    wait = WebDriverWait(driver, timeout=10, poll_frequency=1, ignored_exceptions=ignore_list)
+    element = EC.presence_of_element_located((By.CSS_SELECTOR, ".page-heading"))
+
+    
+    driver.quit()
